@@ -1,1 +1,88 @@
 @use '../base/variables' as v;
+
+main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .content_all{
+        text-align: center;
+        width: 100%;
+
+        .content_titulo-cronometro{
+            .content_titulo{
+                width: 350px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                margin: 0% auto;
+                h1{
+                    color: v.$negro;
+                    text-transform: uppercase;
+                    font-size: 3rem;
+                }
+
+                i{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        .content_time{
+            display: flex;
+            background-color: v.$blanco;
+            height: 120px;
+            .content_display-time{
+                height: 100%;
+                border: 1px solid v.$grisOscuro;
+                width: 100%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                
+
+                .number{
+                    width: 100%;
+                    height: 100%;
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        .content_botones{
+            display: flex;
+            button{
+                width: 100%;
+                color: v.$blanco;
+            }
+            #start{
+                background-color: v.$azulClaro;
+                border: none;
+                border-bottom: 1px solid v.$grisOscuro;
+                font-size: 2rem;
+                transition: .25s;
+
+                &:hover{
+                    box-shadow: 0 0 5px 1px v.$negro;
+                    cursor: pointer;
+                }
+            }
+
+            #stop{
+                background-color: v.$grisOscuro;
+                border: none;
+                border-bottom: 1px solid v.$negro;
+                font-size: 2rem;
+                transition: .25s;
+
+                &:hover{
+                    box-shadow: 0 0 5px 1px v.$negro;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+

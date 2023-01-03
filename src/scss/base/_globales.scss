@@ -1,11 +1,19 @@
+@use 'variables' as v;
 @import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&display=swap');
 
 html{
     margin: 0%;
     padding: 0%;
     display: block;
+    height: 100vh;
 }
 
 body{
     font-family: 'Chivo Mono', monospace;
+    background-color: v.$grisClaro;
+    height: 100%;
+}
+
+h1{
+    color: v.$grisClaro;
 }
