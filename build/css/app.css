@@ -55,7 +55,20 @@ main .content_all .content_time .content_display-time {
   display: flex;
   justify-content: center;
 }
-main .content_all .content_time .content_display-time .number {
+main .content_all .content_time .content_display-time .hours {
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+}
+main .content_all .content_time .content_display-time .hours-none {
+  display: none;
+}
+main .content_all .content_time .content_display-time .minutes {
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+}
+main .content_all .content_time .content_display-time .seconds {
   width: 100%;
   height: 100%;
   font-size: 3rem;

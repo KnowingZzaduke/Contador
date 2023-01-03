@@ -42,7 +42,23 @@ main{
                 justify-content: center;
                 
 
-                .number{
+                .hours{
+                    width: 100%;
+                    height: 100%;
+                    font-size: 3rem;
+                }
+
+                .hours-none{
+                    display: none;
+                }
+
+                .minutes{
+                    width: 100%;
+                    height: 100%;
+                    font-size: 3rem;
+                }
+
+                .seconds{
                     width: 100%;
                     height: 100%;
                     font-size: 3rem;
