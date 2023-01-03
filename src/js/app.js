@@ -1,5 +1,5 @@
 //Declaro las varibales
-let inputs, clock, alarm, hours, minutes, seconds, repeater, newHours, newMinutes, newSeconds;
+let inputs, clock, alarm, hours, minutes, seconds, repeater, newHours, newMinutes, newSeconds, input1, input2, input3, newInput1, newInput2, newInput3;
 
 window.addEventListener('load', () =>{
     clock = document.querySelector('.content_time');
@@ -18,7 +18,9 @@ function startTimer(){
 
 //Función para crear inputs
 function newInputs(){
-    //Nuevo input que da la hora
+    //Nevos contenedores de inputs
+    newInput1 = document.createElement('div');
+    //Nuevos inputs con la funcionalidad de mostrar la hora
     newHours = document.createElement('input');
     newHours.classList.add('newHours');
     newHours.setAttribute("maxlength", "");
@@ -26,6 +28,12 @@ function newInputs(){
     clock.appendChild(newHours);
 }
 
+//Función para eliminar los inpusts establecidos
+function deleteInputs(){
+    if(newInputs()){
+        hours.classList.replace("hours", "hours-none")
+    }
+}
 //Funcion para agregar el conteo en tiempo real
 function setTimer(){
     if(hours > 9){
@@ -78,7 +86,7 @@ function runner(){
         }
     }
     setTimer();
-    newInputs();
+    deleteInputs();
 
 }
 
