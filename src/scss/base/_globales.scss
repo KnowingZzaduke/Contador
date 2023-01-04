@@ -10,10 +10,24 @@ html{
 
 body{
     font-family: 'Chivo Mono', monospace;
-    background-color: v.$grisClaro;
     height: 100%;
 }
 
 h1{
     color: v.$grisClaro;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+input[type=number] { -moz-appearance:textfield; }
+
+
+img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
 }

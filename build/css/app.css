@@ -8,12 +8,28 @@ html {
 
 body {
   font-family: "Chivo Mono", monospace;
-  background-color: #d5dbdb;
   height: 100%;
 }
 
 h1 {
   color: #d5dbdb;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
 }
 
 main {
@@ -30,16 +46,11 @@ main .content_all .content_titulo-cronometro .content_titulo {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   margin: 0% auto;
+  align-items: center;
 }
 main .content_all .content_titulo-cronometro .content_titulo h1 {
   color: black;
   text-transform: uppercase;
-  font-size: 3rem;
-}
-main .content_all .content_titulo-cronometro .content_titulo i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 3rem;
 }
 main .content_all .content_time {

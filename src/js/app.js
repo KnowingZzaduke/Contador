@@ -1,8 +1,10 @@
 //Declaro las varibales
-let alarm, hours, minutes, seconds, repeater, contentInput;
+let alarm, hours, minutes, seconds, repeater, contentInput, clockImg, clockGif;
 
 window.addEventListener('load', () =>{
     contentInput = document.querySelector('.content_time');
+    clockImg = document.querySelector('.clock_img');
+    clockGif = document.querySelector('.clock_gif');
     alarm = new Audio('src/audio/campana.mp3');
 })
 
@@ -29,7 +31,7 @@ function setTimer(){
     }
 
     contentInput.innerHTML = `<input type="text" maxlength="2" value="${hours}" class="hours"><input type="text" maxlength="2" value="${minutes}" class="minutes"><input type="text" maxlength="2" value="${seconds}" class="seconds">`
-    document.title = `<input type="text" maxlength="2" value="${hours}" class="hours"><input type="text" maxlength="2" value="${minutes}" class="minutes"><input type="text" maxlength="2" value="${seconds}" class="seconds">`
+    document.title = `${hours}:${minutes}:${seconds}`;
 }
 
 function perseTimer(){
@@ -43,6 +45,11 @@ function perseTimer(){
 //Función para arrancar el contador
 function inicializar(){
     repeater = setInterval(runner, 1000);
+}
+
+function changeIcons(){
+    clockImg.style.display = ('none');
+    clockGif.style.display = ('block');
 }
 
 //Función encargada del conteo
@@ -68,7 +75,9 @@ function runner(){
         }
     }
     setTimer();
+    changeIcons();
 }
+
 
 //Función para detener el conteo
 function stopTimer(){
