@@ -33,19 +33,19 @@ main{
             display: flex;
             background-color: v.$blanco;
             height: 120px;
-            .content_display-time{
+
+            input{
                 height: 100%;
                 border: 1px solid v.$grisOscuro;
                 width: 100%;
                 align-items: center;
                 display: flex;
                 justify-content: center;
-                
+                font-size: 3rem;
 
                 .hours{
                     width: 100%;
                     height: 100%;
-                    font-size: 3rem;
                 }
 
                 .hours_none{

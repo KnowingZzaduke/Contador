@@ -47,28 +47,28 @@ main .content_all .content_time {
   background-color: white;
   height: 120px;
 }
-main .content_all .content_time .content_display-time {
+main .content_all .content_time input {
   height: 100%;
   border: 1px solid #424949;
   width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;
-}
-main .content_all .content_time .content_display-time .hours {
-  width: 100%;
-  height: 100%;
   font-size: 3rem;
 }
-main .content_all .content_time .content_display-time .hours_none {
+main .content_all .content_time input .hours {
+  width: 100%;
+  height: 100%;
+}
+main .content_all .content_time input .hours_none {
   display: none;
 }
-main .content_all .content_time .content_display-time .minutes {
+main .content_all .content_time input .minutes {
   width: 100%;
   height: 100%;
   font-size: 3rem;
 }
-main .content_all .content_time .content_display-time .seconds {
+main .content_all .content_time input .seconds {
   width: 100%;
   height: 100%;
   font-size: 3rem;
