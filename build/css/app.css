@@ -60,7 +60,7 @@ main .content_all .content_time .content_display-time .hours {
   height: 100%;
   font-size: 3rem;
 }
-main .content_all .content_time .content_display-time .hours-none {
+main .content_all .content_time .content_display-time .hours_none {
   display: none;
 }
 main .content_all .content_time .content_display-time .minutes {

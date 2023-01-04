@@ -1,9 +1,11 @@
 //Declaro las varibales
-let inputs, alarm, hours, minutes, seconds, repeater, newHours, newMinutes, newSeconds, input1, input2, input3, newInput1, newInput2, newInput3, contentInput, contentDisplayTime;
+let alarm, hours, minutes, seconds, repeater, contentInput;
 
 window.addEventListener('load', () =>{
     contentInput = document.querySelector('.content_time');
-    contentDisplayTime = document.querySelector('.content_display-time');
+    input1 = document.querySelector('.input_1');
+    input2 = document.querySelector('.input_2');
+    input3 = document.querySelector('.input_3');
     alarm = new Audio('src/audio/campana.mp3');
 })
 
@@ -17,52 +19,6 @@ function startTimer(){
     inicializar();
 }
 
-//Función para crear inputs
-function newInputs(){
-    //Nevos contenedores de inputs
-    newInput1 = document.createElement('div');
-    newInput1.classList.add('new_content-display-time');
-    contentInput.appendChild(newInput1);
-
-    newInput2 = document.createElement('div');
-    newInput2.classList.add('new_content-display-time');
-    contentInput.appendChild(newInput2);
-
-    newInput3 = document.createElement('div');
-    newInput3.classList.add('new_content-display-time');
-    contentInput.appendChild(newInput3);
-    
-    //Nuevos inputs con la funcionalidad de mostrar la hora
-    newHours = document.createElement('input');
-    newHours.classList.add('new_hours');
-    newHours.value = `${hours}`;
-    newInput1.appendChild(newHours);
-
-    //input minutos
-    newMinutes = document.createElement('input');
-    newMinutes.classList.add('new_minutes');
-    newMinutes.value = `${minutes}`;
-    newInput2.appendChild(newMinutes);
-
-    //input Segundos
-    newSeconds = document.createElement('input');
-    newSeconds.classList.add('new_minutes');
-    newSeconds.value = `${seconds}`;
-    input3.appendChild(newSeconds);
-
-    if(newInput1){
-        input1.style.display = ('none');
-    }else if(newInput2){
-        input2.style.display = ("none");
-    }else if(newInput3){
-        input3.style.display = ("none");
-    }else{
-        console.log('Hay un error');
-    }
-}
-
-//Función para eliminar los inpusts establecidos
-
 //Funcion para agregar el conteo en tiempo real
 function setTimer(){
     if(hours > 9){
@@ -72,6 +28,9 @@ function setTimer(){
     }else if(seconds > 9){
         seconds = '0' + seconds
     }
+
+    contentInput.innerHTML = `<input type="text" maxlength="2" value="${hours}" class="hours"><span>hs</span><input type="text" maxlength="2" value="${minutes}" class="hours"><span>Min</span><input type="text" maxlength="2" value="${seconds}" class="hours"><span>Sec  </span>    `
+
 }
 
 function perseTimer(){
@@ -115,7 +74,6 @@ function runner(){
         }
     }
     setTimer();
-    newInputs();
 }
 
 //Función para detener el conteo
