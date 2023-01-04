@@ -47,6 +47,7 @@ function inicializar(){
     repeater = setInterval(runner, 1000);
 }
 
+//Función para cambiar los iconos
 function changeIcons(){
     clockImg.style.display = ('none');
     clockGif.style.display = ('block');
