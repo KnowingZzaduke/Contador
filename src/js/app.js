@@ -1,8 +1,9 @@
 //Declaro las varibales
-let alarm, hours, minutes, seconds, repeater, contentInput, clockImg, clockGif;
+let alarm, hours, minutes, seconds, repeater, contentButtons, contentInput, clockImg, clockGif;
 
 window.addEventListener('load', () =>{
     contentInput = document.querySelector('.content_time');
+    contentButtons = document.querySelector('.content_botones');
     clockImg = document.querySelector('.clock_img');
     clockGif = document.querySelector('.clock_gif');
     alarm = new Audio('src/audio/campana.mp3');
@@ -17,7 +18,14 @@ function startTimer(){
     setTimer();
     
     //Función para arrancar el contador
-    inicializar();
+    determinar();
+}
+
+
+function perseTimer(){
+    hours = document.querySelector('.hours').value;
+    minutes = document.querySelector('.minutes').value;
+    seconds = document.querySelector('.seconds').value;
 }
 
 //Funcion para agregar el conteo en tiempo real
@@ -27,19 +35,12 @@ function setTimer(){
     }else if(minutes > 9){
         minutes = 0 + minutes;
     }else if(seconds > 9){
-        seconds = 0 + seconds
+        seconds = 0 + seconds;
     }
 
     contentInput.innerHTML = `<input type="text" maxlength="2" value="${hours}" class="hours"><input type="text" maxlength="2" value="${minutes}" class="minutes"><input type="text" maxlength="2" value="${seconds}" class="seconds">`
     document.title = `${hours}:${minutes}:${seconds}`;
 }
-
-function perseTimer(){
-    hours = document.querySelector('.hours').value;
-    minutes = document.querySelector('.minutes').value;
-    seconds = document.querySelector('.seconds').value;
-}
-
 
 
 //Función para arrancar el contador
@@ -51,6 +52,14 @@ function inicializar(){
 function changeIcons(){
     clockImg.style.display = ('none');
     clockGif.style.display = ('block');
+}
+
+//Función para mostrar una alerta si no se ha ingresado ninún número
+function mostrarAlerta(){
+    contentButtons.insertAdjacentHTML('afterend', '<p class="alert">Debes ingresar un tiempo en el contador</p>');
+    setTimeout(()=>{
+        delete window.contentButtons;
+    }, 1000);
 }
 
 //Función encargada del conteo
@@ -77,6 +86,15 @@ function runner(){
     }
     setTimer();
     changeIcons();
+}
+
+//Función encargada de determinar si genera la alerta o realiza el contéo
+function determinar(){
+    if(seconds == 0){
+        mostrarAlerta();
+    }else{
+        inicializar();
+    }
 }
 
 

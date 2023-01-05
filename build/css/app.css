@@ -74,6 +74,16 @@ main .content_all .content_time input .seconds {
   height: 100%;
   font-size: 3rem;
 }
+main .content_all .alert {
+  background-color: #d5dbdb;
+  font-size: 1.5rem;
+  height: 40px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border: 2px solid red;
+  margin-top: 10px;
+}
 main .content_all .content_botones {
   display: flex;
 }
