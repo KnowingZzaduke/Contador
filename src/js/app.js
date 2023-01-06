@@ -91,9 +91,14 @@ function runner(){
 
 //Función encargada de determinar si genera la alerta o realiza el contéo
 function determinar(){
-    if(seconds == 0){
+    if(hours > 0){
+        inicializar();
+    }else if(minutes > 0){
+        inicializar();
+    }else if(seconds == 0){
         mostrarAlerta();
-    }else{
+    }
+    else{
         inicializar();
     }
 }
