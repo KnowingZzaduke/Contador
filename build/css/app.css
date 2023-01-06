@@ -84,6 +84,16 @@ main .content_all .alert {
   border: 2px solid red;
   margin-top: 10px;
 }
+@media only screen and (max-width: 480px) {
+  main .content_all .alert {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  main .content_all .alert {
+    height: auto;
+  }
+}
 main .content_all .content_botones {
   display: flex;
 }
