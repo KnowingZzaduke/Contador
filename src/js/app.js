@@ -57,9 +57,6 @@ function changeIcons(){
 //Función para mostrar una alerta si no se ha ingresado ninún número
 function mostrarAlerta(){
     contentButtons.insertAdjacentHTML('afterend', '<p class="alert">Debes ingresar un tiempo en el contador</p>');
-    setTimeout(()=>{
-        delete window.contentButtons;
-    }, 1000);
 }
 
 //Función encargada del conteo
@@ -91,7 +88,10 @@ function runner(){
 //Función encargada de determinar si genera la alerta o realiza el contéo
 function determinar(){
     if(seconds == 0){
-        mostrarAlerta();
+        let temporizadorMensaje = setTimeout(()=>{
+        mostrarAlerta();;
+    }, 1000);
+        clearTimeout(temporizadorMensaje);
     }else{
         inicializar();
     }
